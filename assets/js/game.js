@@ -2,10 +2,9 @@ var fight = function(enemy) {
   while (playerInfo.health > 0 && enemy.health > 0) {
     // ask player if they'd liked to fight or run
     var promptFight = window.prompt('Would you like FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
-    var promptFight = promptFight.toUpperCase()
 
     // if player picks "skip" confirm and then stop the loop
-    if (promptFight === "SKIP") {
+    if (promptFight === "SKIP" || promptFight ==="skip") {
       // confirm player wants to skip
       var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
@@ -150,6 +149,9 @@ var getPlayerName = function() {
   while (name === "" || name === null) {
     name = prompt("What is your robot's name?");
   }
+
+  console.log("Your robot's name is " + name);
+  return name;
 };
 
 var playerInfo = {
